@@ -62,6 +62,10 @@ form {
 }
 .d1 {
   background: #a3d0c3;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
 }
 .d1 input {
   width: 100%;

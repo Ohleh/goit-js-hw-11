@@ -2,6 +2,7 @@ import Notiflix from 'notiflix';
 import GetPhotos from './js/fetchPhotos';
 import { form, gallery, loadMoreButton } from './js/mainrefs';
 
+loadMoreButton.classList.add('is-visible');
 const getPhotos = new GetPhotos();
 
 form.addEventListener('submit', onSearch);
@@ -19,11 +20,13 @@ function onSearch(el) {
     .fetchPhotos()
     .then(response => {
       renderPhotoListFirst(response);
-      //   console.log(response.data.hits.length);
+
       if (response.data.hits.length < 1) {
         return Notiflix.Notify.info(
           'Sorry, no images matching your query. Please try again.'
         );
+      } else {
+        loadMoreButton.classList.remove('is-visible');
       }
     })
     .catch(er => {
@@ -32,7 +35,6 @@ function onSearch(el) {
 }
 
 function renderPhotoListFirst(photos) {
-  console.log(photos.data.hits);
   const photoCard = photos.data.hits
     .map(
       ({
@@ -78,6 +80,14 @@ function onLoadMoreButton() {
           'Sorry, no images matching your query. Please try again.'
         );
       }
+      // перевірка кінця колекції початок
+      if (getPhotos.page > response.data.totalHits / getPhotos.per_page) {
+        loadMoreButton.classList.add('is-visible');
+        return Notiflix.Notify.info(
+          "We're sorry, but you've reached the end of search results."
+        );
+      }
+      // перевірка кінця колекції кінець
     })
     .catch(er => {
       console.log(er);
@@ -117,24 +127,3 @@ function renderPhotoListAdd(photos) {
     .join('');
   gallery.insertAdjacentHTML('beforeend', photoCard);
 }
-//
-//
-//
-//   toggleAlertPopup();
-// }
-
-// function toggleAlertPopup() {
-//   if (isAlertVisible) {
-//     return;
-//   }
-//   isAlertVisible = true;
-//   alertPopup.classList.add('is-visible');
-//   setTimeout(() => {
-//     alertPopup.classList.remove('is-visible');
-//     isAlertVisible = false;
-//   }, 3000);
-
-// Notiflix.Notify.success('Sol lucet omnibus');
-// Notiflix.Notify.failure('Qui timide rogat docet negare');
-// Notiflix.Notify.warning('Memento te hominem esse');
-// Notiflix.Notify.info('Cogito ergo sum');

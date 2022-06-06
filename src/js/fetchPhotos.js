@@ -12,11 +12,27 @@ axios.defaults.params = {
 export default class GetPhotos {
   constructor() {
     this.page = 1;
-    this.per_page = 20;
+    this.per_page = 5;
+    this.searchValue = '';
   }
-  async fetchPhotos(query) {
+
+  async fetchPhotos() {
     return await axios.get(
-      `/?q=${query}&page=${this.page}&per_page=${this.per_page}`
+      `/?q=${this.searchValue}&page=${this.page}&per_page=${this.per_page}`
     );
+  }
+  get value() {
+    return this.searchValue;
+  }
+
+  set value(newValue) {
+    this.searchValue = newValue;
+  }
+
+  get pageNumber() {
+    return this.page;
+  }
+  set pageNumber(nextValue) {
+    this.page = nextValue;
   }
 }

@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+.gallery {
+  width: 400px;
+  margin: 50px auto 0;
+  position: relative;
+  //   border: 1px solid hsla(21, 37%, 15%, 0.3);
+}
+.gallery img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.gallery h2 {
+  margin: 0;
+  position: absolute;
+  line-height: 1.1;
+  font-size: 1.2em;
+  font-weight: 200;
+  left: 0;
+  bottom: 0;
+  padding: 6px 20px 6px 10px;
+  background: hsla(21, 37%, 15%, 0.2);
+  color: white;
+}
+.info-item {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.7em;
+}

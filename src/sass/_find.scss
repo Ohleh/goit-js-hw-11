@@ -1,0 +1,93 @@
+// * {
+//   box-sizing: border-box;
+// }
+// body {
+//   margin: 0;
+// }
+// div {
+//   padding: 30px 0;
+// }
+// form {
+//   position: relative;
+//   width: 300px;
+//   margin: 0 auto;
+// }
+
+// .search-form {
+//   position: relative;
+//   width: 300px;
+//   margin: 0 auto;
+// }
+// .search-form-input {
+//   width: 100%;
+//   height: 42px;
+//   padding-left: 10px;
+//   border: 2px solid #7ba7ab;
+//   border-radius: 5px;
+//   outline: none;
+//   background: #f9f0da;
+//   color: #9e9c9c;
+// }
+// .search-button {
+//   position: absolute;
+//   top: 0;
+//   right: 0px;
+//   width: 42px;
+//   height: 42px;
+//   border: none;
+//   background: #7ba7ab;
+//   border-radius: 0 5px 5px 0;
+//   cursor: pointer;
+// }
+// .search-button:before {
+//   // background: url('https://www.pngfind.com/pngs/m/109-1092764_search-icon-icon-find-svg-hd-png-download.png')
+//   //   content: '\f002';
+//   font-family: FontAwesome;
+//   font-size: 16px;
+//   color: #f9f0da;
+// }
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+div {
+  padding: 30px 0;
+}
+form {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+.d1 {
+  background: #a3d0c3;
+}
+.d1 input {
+  width: 100%;
+  height: 42px;
+  padding-left: 10px;
+  border: 2px solid #7ba7ab;
+  border-radius: 5px;
+  outline: none;
+  background: #f9f0da;
+  color: #9e9c9c;
+}
+.d1 button {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: #7ba7ab;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.d1 button:before {
+  //   content: '\f002';
+  //   background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/945px-Vector_search_icon.svg.png);
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #f9f0da;
+}

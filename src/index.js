@@ -9,9 +9,12 @@ loadMoreButton.addEventListener('click', onLoadMoreButton);
 
 function onSearch(el) {
   el.preventDefault();
+  getPhotos.pageNumber = 1;
   getPhotos.value = el.currentTarget.elements.searchQuery.value.trim();
+
   if (getPhotos.value === '')
     return Notiflix.Notify.info('Pls, input search word keys');
+
   getPhotos
     .fetchPhotos()
     .then(response => {

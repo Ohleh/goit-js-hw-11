@@ -12,7 +12,7 @@ axios.defaults.params = {
 export default class GetPhotos {
   constructor() {
     this.page = 1;
-    this.per_page = 5;
+    this.per_page = 40;
     this.searchValue = '';
   }
 
